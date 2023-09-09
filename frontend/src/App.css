@@ -16,8 +16,9 @@ header {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     align-items: center;
+    color: #810CA8;
 }
 
 header a {
@@ -25,8 +26,29 @@ header a {
     color: inherit;
 }
 
-header a.logo {
+header div {
+    height: 110%;
+    width: 110%;
     font-weight: bold;
+    color: #C147E9;
+    padding: 5%;
+    margin-top: 5%;
+    margin-inside: 10%;
+    text-shadow: #cecece 5px 5px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+header div:hover {
+    font-weight: bold;
+    color: #C147E9;
+    transform: scale(1.05); /* Use transform to scale the size on hover */
+    text-shadow: rgb(213, 159, 235) 5px 5px 20px;
+    overflow: hidden;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
 }
 
 header nav {
@@ -39,6 +61,26 @@ div.post {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     margin-bottom: 30px;
+
+    border: none;
+    border-radius: 30px;
+    padding: 5%;
+    margin-top: 5%;
+    margin-inside: 10%;
+    box-shadow: #cecece 5px 5px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.post:hover {
+    border: none;
+    border-radius: 30px;
+    padding: 5%;
+    margin-top: 5%;
+    margin-inside: 5%;
+    /*box-shadow: #b4eff0 5px 5px 20px;*/
+    transform: scale(1.05); /* Use transform to scale the size on hover */
+    box-shadow: rgb(213, 159, 235) 5px 5px 20px;
+    overflow: hidden;
 }
 
 div.image {
@@ -75,4 +117,46 @@ form {
 form h1 {
     margin-bottom: 30px;
     font-weight: bold;
+    color: #C147E9;
+}
+
+/* Form input areas */
+.form-control {
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    outline: none;
+    background-color: #fff7fd;
+    width: 100%;
+    box-shadow: #cecece 5px 5px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    outline: none;
+    transform: scale(1.05);
+    box-shadow: rgb(213, 159, 235) 5px 5px 20px;
+    overflow: hidden;
+}
+
+/* Form submit btn */
+form button[type="submit"] {
+    background-color: #C147E9;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    outline: none;
+}
+
+form button[type="submit"]:hover {
+    background-color: #810CA8;
+    color: #fff;
+}
+
+form button[type="submit"]:active {
+    background-color: #810CA8;
+    color: #fff;
 }

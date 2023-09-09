@@ -3,16 +3,21 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const {notFound, errorHandler} = require("./middleware/errorMiddleware");
+const cookieParser = require("cookie-parser");
+
 const app = express();
 require("dotenv").config();
-const User = require("./models/User");
 
 /* Configs */
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
+app.use(cookieParser());
+// app.use(notFound);
+// app.use(errorHandler);
 
 /* Routes */
-const userRouter = require ("./routes/user");
+const userRouter = require("./controllers/userController");
 app.use("/user", userRouter);
 
 /* Mongoose Setup */

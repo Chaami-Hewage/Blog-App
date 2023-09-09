@@ -3,16 +3,30 @@ import React, {useState} from 'react';
 export default function SignupPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    async function signup(event){
+
+    async function signup(event) {
         event.preventDefault();
-        const response = await fetch('http://localhost:8070/user/signup', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password}),
-        })
-        const  data = await response.json();
-        console.log(data);
+        try {
+            const response = await fetch('http://localhost:8070/user/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.status === 200) {
+                alert('User registered successfully');
+            } else {
+                alert('Registration failed: ' + data.message);
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+            alert('An error occurred while registering.');
+        }
     }
+
+
 
     return (
         <div className="d-flex justify-content-center align-items-center">
@@ -38,7 +52,7 @@ export default function SignupPage() {
                            onChange={(event) => setPassword(event.target.value)}/>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-block mb-4">Sign up</button>
+                <button type="submit" className="btn btn-custom-primary btn-block mb-4">Sign up</button>
 
             </form>
         </div>
