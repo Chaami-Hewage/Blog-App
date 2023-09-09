@@ -41,7 +41,7 @@ div.post {
     margin-bottom: 30px;
 }
 
-div.image{
+div.image {
     margin-top: 30px;
 }
 
@@ -50,7 +50,7 @@ div.post div.texts h2 {
     font-size: 1.5rem;
 }
 
-div.post p.info{
+div.post p.info {
     margin: 6px 0;
     color: #888;
     font-size: .7rem;
@@ -66,4 +66,13 @@ div.post p.info a.author {
 div.post p.summary {
     margin: 10px 0;
     line-height: 1.4rem;
+}
+
+form {
+    width: 60%;
+}
+
+form h1 {
+    margin-bottom: 30px;
+    font-weight: bold;
 }
