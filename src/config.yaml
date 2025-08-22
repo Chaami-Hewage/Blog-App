@@ -1,0 +1,34 @@
+data_dir: data
+products_csv: data/products.csv
+index_dir: data/index
+
+embeddings_model: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+
+llm_model: Qwen/Qwen2.5-3B-Instruct
+llm_4bit: true
+lora_adapter: null  # set to path like models/qwen2.5-3b-md-lora if trained
+
+whisper_model: medium  # options: tiny, base, small, medium, large-v3
+whisper_compute_type: float16  # int8, int8_float16, float16, float32
+
+# TTS
+tts_en_model: parler-tts/parler-tts-mini-v1
+# For Parler-TTS, we use a style prompt rather than a reference speaker.
+parler_style_prompt: |
+  A warm, confident female brand ambassador with alluring, inviting tone, natural pacing,
+  and subtle flirtatious energy. Emotionally engaging and sophisticated, never explicit.
+
+gtts_sinhala_lang: si
+
+# Generation settings
+max_new_tokens: 300
+temperature: 0.9
+top_p: 0.9
+repetition_penalty: 1.05
+
+# Retrieval
+top_k: 5
+
+# UI
+share: false
+server_port: 7860
